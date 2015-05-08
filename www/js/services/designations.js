@@ -181,6 +181,15 @@ angular.module('demo.designation')
 			return {
 				all: function() {
 					return designations;
+				},
+				get: function(designationNumber) {
+					var found = {};
+					angular.forEach(designations, function(desig) {
+						if(desig.designationNumber === designationNumber) {
+							found = desig;
+						}
+					});
+					return found;
 				}
 			};
 		});
