@@ -8,21 +8,41 @@ angular.module('demo.give', [])
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function(modal) {
-            $scope.modal = modal;
+            $scope.amountsModal = modal;
         });
 
-        $scope.openModal = function() {
-            $scope.modal.show();
+        $ionicModal.fromTemplateUrl('frequency-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.frequencyModal = modal;
+        });
+
+        $scope.openModal = function(whichModal) {
+            if(whichModal === 'amounts') {
+                $scope.amountsModal.show();
+            }
+            else if(whichModal === 'frequency') {
+                $scope.frequencyModal.show();
+            }
         };
 
-        $scope.closeModal = function(amount) {
-            $scope.chosenAmount = amount;
-            $scope.modal.hide();
+        $scope.closeModal = function(whichModal, chosenValue) {
+            if(whichModal === 'amounts') {
+                $scope.chosenAmount = chosenValue;
+                $scope.amountsModal.hide();
+            }
+            else if(whichModal === 'frequency') {
+                $scope.chosenFrequency = chosenValue;
+                $scope.frequencyModal.hide();
+            }
         };
 
         $scope.$on('$destroy', function() {
-            $scope.modal.remove();
+            $scope.amountsModal.remove();
+            $scope.frequencyModal.remove();
         });
 
         $scope.chosenAmount = 0;
+        $scope.chosenFrequency = 'Single';
     });

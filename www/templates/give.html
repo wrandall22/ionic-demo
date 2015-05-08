@@ -4,8 +4,15 @@
         <ng-form>
             <ion-list>
                 <ion-item>
-                    <div class="clickableItem" ng-click="openModal()">
-                        <p>Choose Amount</p><span id="chosenAmount">${{chosenAmount}}</span>
+                    <div class="clickableItem" ng-click="openModal('amounts')">
+                        <p>Choose Amount</p>
+                        <span id="chosenAmount">${{chosenAmount}}</span>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <div class="clickableItem" ng-click="openModal('frequency')">
+                        <p>Frequency</p>
+                        <span id="chosenFrequency">{{chosenFrequency}}</span>
                     </div>
                 </ion-item>
             </ion-list>
@@ -20,12 +27,29 @@
         </ion-header-bar>
         <ion-content>
             <div class="list">
-                <ion-radio ng-value="50" ng-model="chosenAmount" ng-click="closeModal(50)">$50</ion-radio>
-                <ion-radio ng-value="100" ng-model="chosenAmount" ng-click="closeModal(100)">$100</ion-radio>
-                <ion-radio ng-value="250" ng-model="chosenAmount" ng-click="closeModal(250)">$250</ion-radio>
-                <ion-radio ng-value="500" ng-model="chosenAmount" ng-click="closeModal(500)">$500</ion-radio>
-                <ion-radio ng-value="1000" ng-model="chosenAmount" ng-click="closeModal(1000)">$1000</ion-radio>
-                <ion-radio ng-value="5000" ng-model="chosenAmount" ng-click="closeModal(5000)">$5000</ion-radio>
+                <ion-radio ng-value="50" ng-model="chosenAmount" ng-click="closeModal('amounts', 50)">$50</ion-radio>
+                <ion-radio ng-value="100" ng-model="chosenAmount" ng-click="closeModal('amounts', 100)">$100</ion-radio>
+                <ion-radio ng-value="250" ng-model="chosenAmount" ng-click="closeModal('amounts', 250)">$250</ion-radio>
+                <ion-radio ng-value="500" ng-model="chosenAmount" ng-click="closeModal('amounts', 500)">$500</ion-radio>
+                <ion-radio ng-value="1000" ng-model="chosenAmount" ng-click="closeModal('amounts', 1000)">$1000</ion-radio>
+                <ion-radio ng-value="5000" ng-model="chosenAmount" ng-click="closeModal('amounts', 5000)">$5000</ion-radio>
+            </div>
+        </ion-content>
+    </div>
+</script>
+
+<script id="frequency-modal.html" type="text/ng-template">
+    <div class="modal">
+        <ion-header-bar>
+            <h1 class="title">Choose Frequency</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <ion-radio ng-value="Single" ng-model="chosenFrequency" ng-click="closeModal('frequency', 'Single')">Single</ion-radio>
+                <ion-radio ng-value="Monthly" ng-model="chosenFrequency" ng-click="closeModal('frequency', 'Monthly')">Monthly</ion-radio>
+                <ion-radio ng-value="Quarterly" ng-model="chosenFrequency" ng-click="closeModal('frequency', 'Quarterly')">Quarterly</ion-radio>
+                <ion-radio ng-value="Semi-Annual" ng-model="chosenFrequency" ng-click="closeModal('frequency', 'Semi-Annual')">Semi-Annual</ion-radio>
+                <ion-radio ng-value="Annual" ng-model="chosenFrequency" ng-click="closeModal('frequency', 'Annual')">Annual</ion-radio>
             </div>
         </ion-content>
     </div>
