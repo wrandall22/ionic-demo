@@ -2,7 +2,7 @@
 
 angular.module('demo.designation', [])
 
-.controller('DesignationCtrl', function($scope) {
+.controller('DesignationCtrl', function($scope, $stateParams) {
     var DEFAULT_CAMPAIGN = '1-000';
 
     var designations = [
@@ -175,4 +175,12 @@ angular.module('demo.designation', [])
             campaignCode: '1-123'
         }
     ];
+
+    $scope.viewedDesignation = {};
+
+    angular.forEach(designations, function(desig) {
+        if(desig.designationNumber === $stateParams.designationNumber) {
+            $scope.viewedDesignation = desig;
+        }
+    });
 });
