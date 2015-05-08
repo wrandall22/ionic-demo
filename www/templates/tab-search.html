@@ -5,10 +5,10 @@
       <input type="search" placeholder="search..." ng-model="searchTerm">
     </label>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="d in designations | filter:searchTerm" type="item-text-wrap" href="#/designation/{{d.designationNumber}}">
-        <!--<img ng-src="{{d.icon}}">-->
-        <h2>{{d.name}}</h2>
-        <p>{{d.type}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="designation in designations | filter:searchTerm" type="item-text-wrap" href="#/designation/{{designation.designationNumber}}">
+        <!--<img ng-src="{{designation.icon}}">-->
+        <h2>{{designation.name}}</h2>
+        <p>{{designation.type}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
