@@ -6,7 +6,7 @@
     </label>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="designation in designations | filter:searchTerm" type="item-text-wrap" href="#/designation/{{designation.designationNumber}}">
-        <!--<img ng-src="{{designation.icon}}">-->
+        <img ng-src="{{designation.picture}}">
         <h2>{{designation.name}}</h2>
         <p>{{designation.type}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
