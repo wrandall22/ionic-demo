@@ -15,11 +15,14 @@ angular.module('demo.give', [])
             $scope.modal.show();
         };
 
-        $scope.closeModal = function() {
+        $scope.closeModal = function(amount) {
+            $scope.chosenAmount = amount;
             $scope.modal.hide();
         };
 
         $scope.$on('$destroy', function() {
             $scope.modal.remove();
         });
+
+        $scope.chosenAmount = 0;
     });
