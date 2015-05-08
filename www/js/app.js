@@ -29,21 +29,17 @@ angular.module('demo', ['ionic', 'starter.controllers', 'starter.services', 'dem
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+  .state('designation', {
+      url: '/designation/:designationNumber',
+      templateUrl: 'templates/designation.html',
+      controller: 'DesignationCtrl'
+    })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
-  })
-
-  .state('tab.designation', {
-    url: '/designation/:designationNumber',
-    views: {
-      'tab-designation': {
-        templateUrl: 'templates/designation.html',
-        controller: 'DesignationCtrl'
-      }
-    }
   })
 
   // Each tab has its own nav history stack:
@@ -67,6 +63,7 @@ angular.module('demo', ['ionic', 'starter.controllers', 'starter.services', 'dem
         }
       }
     })
+
   .state('tab.account', {
     url: '/account',
     views: {
