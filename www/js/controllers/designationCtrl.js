@@ -162,7 +162,7 @@ angular.module('demo.designation', [])
             designationNumber: '1234567',
             type: 'Staff',
             campaignCode: DEFAULT_CAMPAIGN,
-            description: 'I have been working at Cru for nearly two years now.  During that time I have worked on tools such as our event regisration tool, WatchThinkChat, and MPDx.'
+            description: 'I have been working at Cru for nearly two years now.  During that time I have worked on tools such as our event registration tool, WatchThinkChat, and MPDx.'
         },
         {
             name: 'US Digital Strategies',
