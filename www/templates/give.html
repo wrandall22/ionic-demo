@@ -1,5 +1,30 @@
 <ion-view view-title="Give">
     <ion-content style="margin:6px;">
         <h1>{{designationToGiveTo.name}} ({{designationToGiveTo.designationNumber}})</h1>
+        <ng-form>
+            <ion-list>
+                <ion-item>
+                    <p ng-click="openModal()">Choose Amount</p>
+                </ion-item>
+            </ion-list>
+        </ng-form>
     </ion-content>
 </ion-view>
+
+<script id="amounts-modal.html" type="text/ng-template">
+    <div class="modal">
+        <ion-header-bar>
+            <h1 class="title">Choose Amount</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <ion-radio ng-value="50" ng-click="closeModal()">$50</ion-radio>
+                <ion-radio ng-value="100" ng-click="closeModal()">$100</ion-radio>
+                <ion-radio ng-value="250" ng-click="closeModal()">$250</ion-radio>
+                <ion-radio ng-value="500" ng-click="closeModal()">$500</ion-radio>
+                <ion-radio ng-value="1000" ng-click="closeModal()">$1000</ion-radio>
+                <ion-radio ng-value="5000" ng-click="closeModal()">$5000</ion-radio>
+            </div>
+        </ion-content>
+    </div>
+</script>
