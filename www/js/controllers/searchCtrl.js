@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demo.designation', [])
+angular.module('demo.designation')
 
 		.controller('SearchCtrl', function($scope) {
 			var DEFAULT_CAMPAIGN = '1-000';
