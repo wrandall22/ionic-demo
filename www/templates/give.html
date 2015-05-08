@@ -4,7 +4,9 @@
         <ng-form>
             <ion-list>
                 <ion-item>
-                    <p ng-click="openModal()">Choose Amount</p><span id="chosenAmount">${{chosenAmount}}</span>
+                    <div class="clickableItem" ng-click="openModal()">
+                        <p>Choose Amount</p><span id="chosenAmount">${{chosenAmount}}</span>
+                    </div>
                 </ion-item>
             </ion-list>
         </ng-form>
