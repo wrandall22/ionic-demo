@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('demo', ['ionic', 'demo.designation'])
+angular.module('demo', ['ionic', 'demo.designation', 'demo.give'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -39,6 +39,12 @@ angular.module('demo', ['ionic', 'demo.designation'])
       url: '/search',
       templateUrl: 'templates/search.html',
       controller: 'SearchCtrl'
+    })
+
+    .state('give', {
+        url: '/give/:designationNumber',
+        templateUrl: 'templates/give.html',
+        controller: 'GiveCtrl'
     })
 
   // if none of the above states are matched, use this as the fallback
