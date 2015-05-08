@@ -38,8 +38,12 @@ angular.module('demo', ['ionic', 'starter.controllers', 'starter.services', 'dem
 
   .state('tab.designation', {
     url: '/designation/:designationNumber',
-    templateUrl: 'templates/designation.html',
-    controller: 'DesignationCtrl'
+    views: {
+      'tab-designation': {
+        templateUrl: 'templates/designation.html',
+        controller: 'DesignationCtrl'
+      }
+    }
   })
 
   // Each tab has its own nav history stack:
