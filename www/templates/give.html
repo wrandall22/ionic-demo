@@ -21,6 +21,14 @@
                         <span id="chosenDrawDay">{{chosenDrawDay}}</span>
                     </div>
                 </ion-item>
+
+                <!-- Payment Info -->
+                <ion-item>
+                    <div class="clickableItem" ng-click="openModal('payment')">
+                        <p>Payment</p>
+                        <span id="chosenPayment">{{chosenPayment.description}}</span>
+                    </div>
+                </ion-item>
             </ion-list>
         </ng-form>
     </ion-content>
@@ -73,6 +81,25 @@
                 <ion-radio ng-value="15" ng-model="chosenDrawDay" ng-click="closeModal('draw', '15')">15</ion-radio>
                 <ion-radio ng-value="20" ng-model="chosenDrawDay" ng-click="closeModal('draw', '20')">20</ion-radio>
                 <ion-radio ng-value="25" ng-model="chosenDrawDay" ng-click="closeModal('draw', '25')">25</ion-radio>
+            </div>
+        </ion-content>
+    </div>
+</script>
+
+<script id="payment-modal.html" type="text/ng-template">
+    <div class="modal">
+        <ion-header-bar>
+            <h1 class="title">Payment Method</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <div class="paymentOption" ng-repeat="payment in paymentList">
+                    <ion-radio ng-value="payment.paymentId"
+                               ng-model="chosenPaymentId"
+                               ng-click="closeModal('payment', payment.paymentId)">
+                        {{payment.description}}
+                    </ion-radio>
+                </div>
             </div>
         </ion-content>
     </div>
