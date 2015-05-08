@@ -29,16 +29,16 @@ angular.module('demo', ['ionic', 'demo.designation', 'demo.give'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  .state('designation', {
-      url: '/designation/:designationNumber',
-      templateUrl: 'templates/designation.html',
-      controller: 'DesignationCtrl'
+    .state('search', {
+        url: '/search',
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
     })
 
-  .state('search', {
-      url: '/search',
-      templateUrl: 'templates/search.html',
-      controller: 'SearchCtrl'
+    .state('designation', {
+        url: '/designation/:designationNumber',
+        templateUrl: 'templates/designation.html',
+        controller: 'DesignationCtrl'
     })
 
     .state('give', {
