@@ -10,7 +10,8 @@ angular.module('demo.designation', [])
             name: 'Bill Randall',
             designationNumber: '0123456',
             type: 'Staff',
-            campaignCode: DEFAULT_CAMPAIGN
+            campaignCode: DEFAULT_CAMPAIGN,
+            description: 'I have been working at Cru for over five years. During that time, I have worked primarily on give.cru.org and have also helped maintain some of our other web applications such as our internal staff application, our conference registration system, and our credit card processing system.'
         },
         {
             name: 'Bill Palmer',
@@ -160,19 +161,22 @@ angular.module('demo.designation', [])
             name: 'Adam Meyer',
             designationNumber: '1234567',
             type: 'Staff',
-            campaignCode: DEFAULT_CAMPAIGN
+            campaignCode: DEFAULT_CAMPAIGN,
+            description: 'I have been working at Cru for nearly two years now.  During that time I have worked on tools such as our event regisration tool, WatchThinkChat, and MPDx.'
         },
         {
             name: 'US Digital Strategies',
             designationNumber: '2345678',
             type: 'Ministry',
-            campaignCode: DEFAULT_CAMPAIGN
+            campaignCode: DEFAULT_CAMPAIGN,
+            description: 'We at US Digital Strategies are about equipping Christ-centered laborers with tools that will help them minister to the people in their lives.'
         },
         {
             name: 'Computers for Africa',
             designationNumber: '3456789',
             type: 'Fund Appeal',
-            campaignCode: '1-123'
+            campaignCode: '1-123',
+            description: 'There is a need for people in rural villages in Africa to have computers with which they can manage their local businesses and run hospitals. Please contact us if you want to give an actual computer to this cause, otherwise, continue to the giving page to donate towards one or more computers for those in need.'
         }
     ];
 
