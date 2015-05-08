@@ -1,6 +1,8 @@
 'use strict';
 
-angular.controller('DesignationCtrl', function($scope) {
+angular.module('demo.designation', [])
+
+.controller('DesignationCtrl', function($scope) {
     var DEFAULT_CAMPAIGN = '1-000';
 
     var designations = [
