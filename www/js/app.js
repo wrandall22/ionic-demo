@@ -37,7 +37,7 @@ angular.module('demo', ['ionic', 'starter.controllers', 'starter.services', 'dem
 
   .state('search', {
       url: '/search',
-      templateUrl: 'templates/tab-search.html',
+      templateUrl: 'templates/search.html',
       controller: 'SearchCtrl'
     })
 
