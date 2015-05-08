@@ -18,12 +18,22 @@ angular.module('demo.give', [])
             $scope.frequencyModal = modal;
         });
 
+        $ionicModal.fromTemplateUrl('draw-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.drawModal = modal;
+        });
+
         $scope.openModal = function(whichModal) {
             if(whichModal === 'amounts') {
                 $scope.amountsModal.show();
             }
             else if(whichModal === 'frequency') {
                 $scope.frequencyModal.show();
+            }
+            else if(whichModal === 'draw') {
+                $scope.drawModal.show();
             }
         };
 
@@ -34,15 +44,23 @@ angular.module('demo.give', [])
             }
             else if(whichModal === 'frequency') {
                 $scope.chosenFrequency = chosenValue;
+                $scope.recurring = $scope.chosenFrequency !== 'Single';
                 $scope.frequencyModal.hide();
+            }
+            else if(whichModal === 'draw') {
+                $scope.chosenDrawDay = chosenValue;
+                $scope.drawModal.hide();
             }
         };
 
         $scope.$on('$destroy', function() {
             $scope.amountsModal.remove();
             $scope.frequencyModal.remove();
+            $scope.drawModal.remove();
         });
 
         $scope.chosenAmount = 0;
         $scope.chosenFrequency = 'Single';
+        $scope.chosenDrawDay = '05';
+        $scope.recurring = $scope.chosenFrequency !== 'Single';
     });
