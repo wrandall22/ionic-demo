@@ -98,14 +98,12 @@
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item class="paymentOption">
-                    <ion-radio ng-repeat="payment in paymentList"
-                               ng-value="payment.paymentId"
-                               ng-model="chosenPaymentId"
-                               ng-click="closeModal('payment', payment.paymentId)">
-                        {{payment.description}}
-                    </ion-radio>
-                </ion-item>
+                <ion-radio ng-repeat="payment in paymentList"
+                           ng-value="payment.paymentId"
+                           ng-model="chosenPaymentId"
+                           ng-click="closeModal('payment', payment.paymentId)">
+                    {{payment.description}}
+                </ion-radio>
                 <ion-item>
                     <button ng-click="addPayment()" class="button button-energized">Add Payment</button>
                 </ion-item>
