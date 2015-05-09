@@ -3,6 +3,14 @@
 angular.module('demo.give', [])
     .controller('GiveCtrl', function($scope, $stateParams, $ionicModal, designations, payments) {
         $scope.designationToGiveTo = designations.get($stateParams.designationNumber);
+        $scope.chosenAmount = 0;
+        $scope.chosenFrequency = 'Single';
+        $scope.chosenDrawDay = '05';
+        $scope.recurring = $scope.chosenFrequency !== 'Single';
+
+        $scope.chosenPaymentId = '0';
+        $scope.chosenPayment = {};
+        $scope.paymentList = payments.all();
 
         $ionicModal.fromTemplateUrl('amounts-modal.html', {
             scope: $scope,
@@ -74,13 +82,4 @@ angular.module('demo.give', [])
             $scope.drawModal.remove();
             $scope.paymentModal.remove();
         });
-
-        $scope.chosenAmount = 0;
-        $scope.chosenFrequency = 'Single';
-        $scope.chosenDrawDay = '05';
-        $scope.recurring = $scope.chosenFrequency !== 'Single';
-
-        $scope.chosenPaymentId = '0';
-        $scope.chosenPayment = {};
-        $scope.paymentList = payments.all();
     });
