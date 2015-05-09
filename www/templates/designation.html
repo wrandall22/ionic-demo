@@ -1,7 +1,7 @@
 <ion-view view-title="Designation">
     <ion-content style="margin:6px;">
         <h1>{{viewedDesignation.name}} ({{viewedDesignation.designationNumber}})</h1>
-        <a ng-href="#/give/{{viewedDesignation.designationNumber}}">Give</a>
+        <a ng-href="#/give/{{viewedDesignation.designationNumber}}" class="button button-energized">Give</a>
         <p>{{viewedDesignation.description}}</p>
         <img ng-src="{{viewedDesignation.picture}}" style="width:100%" />
     </ion-content>
