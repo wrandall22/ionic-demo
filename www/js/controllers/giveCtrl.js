@@ -82,4 +82,8 @@ angular.module('demo.give', [])
             $scope.drawModal.remove();
             $scope.paymentModal.remove();
         });
+
+        $scope.addPayment = function() {
+            //TODO: show some inputs for adding a new payment (choice between CC/EFT, subtype, etc)
+        }
     });
