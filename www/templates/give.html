@@ -3,6 +3,7 @@
         <h1>{{designationToGiveTo.name}} ({{designationToGiveTo.designationNumber}})</h1>
         <ng-form>
             <ion-list>
+                <!-- Gift Info -->
                 <ion-item>
                     <div class="clickableItem" ng-click="openModal('amounts')">
                         <p>Choose Amount</p>
@@ -28,6 +29,10 @@
                         <p>Payment</p>
                         <span id="chosenPayment">{{chosenPayment.description}}</span>
                     </div>
+                </ion-item>
+
+                <ion-item>
+                    <a class="continueButton" ui-sref="summary">Continue</a>
                 </ion-item>
             </ion-list>
         </ng-form>

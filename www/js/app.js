@@ -47,6 +47,11 @@ angular.module('demo', ['ionic', 'demo.designation', 'demo.give'])
         controller: 'GiveCtrl'
     })
 
+    .state('summary', {
+        url: '/summary',
+        templateUrl: 'templates/summary.html'
+    })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/search');
 
