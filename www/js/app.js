@@ -52,6 +52,11 @@ angular.module('demo', ['ionic', 'demo.designation', 'demo.give'])
         templateUrl: 'templates/summary.html'
     })
 
+    .state('thankYou', {
+        url: '/thankYou',
+        templateUrl: 'templates/thankYou.html'
+    })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/search');
 
